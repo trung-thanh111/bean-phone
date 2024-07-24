@@ -1,0 +1,88 @@
+<div class="bg-light ">
+            <div class="row ms-3  pt-3 ps-2 pe-2">
+                <nav aria-label="breadcrumb ">
+                    <ol class="breadcrumb container">
+                        <li class="breadcrumb-item"><a href="index.html">Trang Chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Yêu Thích</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-5  ">
+        <div class="row">
+            <div class="col-3 ">
+                <div class="d-flex">
+                    <img src="Public/img/{{ user.img }}" class="rounded-circle border" style="width: 60px; height: 60px;" alt="">
+                    <div class="align-middle ">
+
+                        <h4 class="ms-3">{{ user.name }}</h4>
+                        <span class="ms-3 fz-14"> Trải Nghiệm Ngay!</span>
+                    </div>
+                </div>
+                <ul class="list-unstyled mt-5 fz-14 fw-bold ">
+                    <li class="mb-4">
+                        <a href="#!info/{{ user.id }}" class="text-hover ">Thông Tin Tài khoản</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#!orders/{{ user.id }}" class="text-hover ">Đơn Hàng</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#!changepass/{{ user.id }}" class="text-hover ">Đổi Mật Khẩu</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#!whistlist" class="text-hover ">Yêu Thích</a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="#!address/{{ user.id }}" class="text-hover ">Địa Chỉ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-9">
+                <h5 class="mt-1 mb-5">YÊU THÍCH CỦA BẠN</h5>
+                <div class="row mb-5">
+                    <div class="col p-2" ng-repeat="sp in Products | filter:keyword | limitTo:4">
+                        <div class="card shadow">
+                            <div class="head-card d-flex p-2">
+                                <span class="text-bg-danger rounded-end ps-2 pe-2 pt-1 fz-10">{{ ((sp.del -
+                                    sp.price)/sp.del)*100 |
+                                    number:0 }}%</span>
+                                <span class="ms-auto"><i class="fa-regular fa-heart text-danger "></i></span>
+                            </div>
+                            <img src="../Public/img/{{ sp.img }}" class="card-img-top scale-hover" alt="...">
+                            <span
+                                class="text-white ms-2 mt-4  ps-3 pe-3  rounded-pill position-absolute fz-14 top-50  start-0 translate-middle-y"
+                                style="background-color: var(--subColor); ">{{ sp.hot }}</span>
+        
+                            <div class="card-body p-2">
+                                <h6 class="fw-light" style="height: 40px;"><a href="#!productDetail/{{ sp.id }}"
+                                        class="text-break w-100 text-hover">{{ sp.name }}</a></h5>
+                                    <div class="d-flex ">
+                                        <span class="text-danger">{{ sp.price | currency:" ":0 }} VNĐ<br>
+                                            <del class="text-secondary fz-14">{{ sp.del | currency:" ":0 }} VNĐ</del></span>
+                                        <span class="ms-auto align-middle"><a type="submit"  ng-click="addToCart(sp)" ><i class="fa-solid fa-cart-plus p-2 bg-info rounded text-white scale-hover"></i></a></span>
+                                    </div>
+                                    <p class="card-text mb-2 mt-2  bg-success p-0 rounded-pill fz-10 text-center text-white">
+                                        Đã bán {{ sp.sold }} sản phẩm</p>
+                                    <p class="card-text bg-light p-0 rounded fz-10 text-center text-dark pt-1 pb-1">{{ sp.gift
+                                        }}
+                                    </p>
+                                    <div class="head-card d-flex p-0">
+                                        <span class="fz-14 ">
+                                            <div class="rating">
+                                                <span class="fa fa-star text-warning"></span>
+                                                <span class="fa fa-star text-warning"></span>
+                                                <span class="fa fa-star text-warning"></span>
+                                                <span class="fa fa-star text-warning"></span>
+                                                <span class="fa fa-star text-warning"></span>
+                                            </div>
+                                        </span>
+                                        <span class="ms-auto fz-14"> {{ sp.feedback }}</span>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

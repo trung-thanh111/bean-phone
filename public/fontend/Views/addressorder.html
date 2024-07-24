@@ -1,0 +1,56 @@
+
+        <div class="bg-light ">
+            <div class="row ms-3  pt-3">
+                <nav aria-label="breadcrumb ">
+                    <ol class="breadcrumb container">
+                        <li class="breadcrumb-item"><a href="#!">Trang Chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Địa Chỉ</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-5  ">
+        <div class="row">
+            <div class="col-3 ">
+                <div class="d-flex">
+                    <img src="Public/img/{{ user.img }}" class="rounded-circle border" style="width: 60px; height: 60px;" alt="">
+                    <div class="align-middle ">
+
+                        <h4 class="ms-3">{{ user.name }}</h4>
+                        <span class="ms-3 fz-14"> Trải Nghiệm Ngay!</span>
+                    </div>
+                </div>
+                <ul class="list-unstyled mt-5 fz-14 fw-bold ">
+                    <li class="mb-4">
+                        <a href="#!info/{{ user.id }}" class="text-hover ">Thông Tin Tài khoản</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#!orders/{{ user.id }}" class="text-hover ">Đơn Hàng</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#!changepass/{{ user.id }}" class="text-hover ">Đổi Mật Khẩu</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#!whistlist" class="text-hover ">Yêu Thích</a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="#!address/{{ user.id }}" class="text-hover ">Địa Chỉ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-9">
+                <h5 class="mt-1 mb-5">ĐỊA CHỈ ĐẶT HÀNG</h5>
+                <div class="col-9">
+                    <a href="" class="btn btn-success mt-3 mb-5">Thêm mới</a> <br>
+                    <div class="mb-3" ng-repeat="address in listOrders">
+                        <span class="fw-bold mb-5">Địa chỉ {{ $index+1 }}:</span> <br>
+                        <span class="p-2 mt-3 mb-3 ">
+                            {{ address.address + "," + address.district.Name + ","+ address.province.Name }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

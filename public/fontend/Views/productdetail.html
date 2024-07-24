@@ -1,0 +1,409 @@
+<div class="bg-light ">
+            <div class="row ms-3  pt-3">
+                <nav aria-label="breadcrumb ">
+                    <ol class="breadcrumb container">
+                        <li class="breadcrumb-item"><a href="index.html">Trang Chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Chi Tiết Sản Phẩm</li>
+                    </ol>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+    <div class="container mb-5 mt-5 ">
+        <div class="row ">
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-5 ">
+                        <div class="position-relative">
+                            <img src="../Public/img/{{ sp.img }}" style="width: 365px; height: 365px;" alt="">
+                            <span
+                                class="fz-14 position-absolute top-0 start-0 ms-2 mt-2 btn btn-danger rounded-pill ps-3 pe-3">
+                                {{ sp.hot }}</span>
+                            <span><i
+                                    class="fa fa-heart position-absolute top-0 end-0 me-4 mt-2 fs-4 text-danger"></i></span>
+                        </div>
+                        <div class="row">
+                            <img src="Public/img/{{ sp.img }}" style="max-width: 90px; height:80px;"
+                                class="border  object-fit-cover m-3" alt="">
+                            <img src="Public/img/{{ sp.img }}" style="max-width: 90px; height:80px;"
+                                class="border  object-fit-cover m-3" alt="">
+                            <img src="Public/img/{{ sp.img }}" style="max-width: 90px; height:80px;"
+                                class="border  object-fit-cover m-3" alt="">
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <h4 class="mb-3" ng-model="sp.name">{{ sp.name }}</h4>
+                        <div class="d-flex ">
+                            <span class="fz-14 text-secondary">
+                                Đã bán: {{ sp.sold }} sản phẩm
+                            </span>
+                            <span class=" ms-5 mb-3 fz-14 text-secondary">
+                                <div class="rating ">
+                                    Đánh giá:
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                    <span class="fa fa-star text-warning"></span>
+                                </div>
+                            </span>
+                        </div>
+                        <h4 class="mb-2">Giá Bán: <strong class="text-danger ">{{ sp.price | currency:" ":0 }} VNĐ</strong></h4>
+                        <div class="d-flex mb-3 ">
+                            <span class="fz-14 text-secondary">
+                                Giá thị trường <del>{{ sp.del | currency:" ":0  }} VNĐ</del>
+                            </span>
+                            <span class=" ms-5 fz-14 text-secondary">
+                                Tiết Kiệm đến: <strong class="text-danger fw-light">{{ sp.del - sp.price | currency:" ":0  }} VNĐ</strong> so với giá thị
+                                trường
+                            </span>
+                        </div>
+                        <h5 class=" mb-2 fs-6 bg-body-secondary p-2 mb-2">Quà Tặng Khuyến Mãi</h5>
+                        <div class="d-flex ">
+                            <span class="fz-14 text-secondary">
+                                <div class="form-check mb-2  ms-2 table-bordered">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label2" for="flexCheckDefault">
+                                        {{ sp.gift }}
+                                    </label>
+                                </div>
+                            </span>
+
+                        </div>
+                        <h5 class=" mb-2 fs-6 mt-4">Số Lượng</h5>
+                        <div class="input-group mb-3 w-25 fz-14">
+                            <span class="input-group-text fz-14"><i class="fa fa-minus"></i></span>
+                            <input type="text" class="form-control text-center"  value="1">
+                            <span class="input-group-text fz-14"><i class="fa fa-plus"></i></span>
+
+                        </div>
+                        <div class="mb-3 w-100">
+                            <a  type="submit" ng-click="addToCart(sp)" class="btn w-100 btn-primary fz-14"><i
+                                        class="fa-solid fa-cart-shopping me-2"></i>Mua Ngay <br>
+                                    <span class="fz-12"> Giao hàng tận nơi hoặc nhận tại cửa hàng</span></a>
+                            <div class="row w-100 mt-2 ms-0">
+                                <div class="col p-0 w-100 ">
+                                    <a class="btn btn-outline-primary w-100" type="submit" ng-click="addToCart(sp)" style="height: 61px;">Thêm Vào Giỏ Hàng </a> 
+                                </div>
+                                <div class="col p-0 ms-2">
+                                    <a href="#"><button class="btn btn-outline-primary w-100">Mua Trả Góp <br
+                                                class="p-1">
+                                            <span class="fz-10">Duyệt hồ sơ nhanh </span></button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="list-group border ">
+                    <button type="button" class="list-group-item list-group-item-action fw-bold bg-title-cl text-white"
+                        aria-current="true">
+                        Chính Sách Của Chúng Tôi
+                    </button>
+                    <div class="fz-14 p-3">
+                        <div class="form-check mb-1 mt-1">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                <i class="fa-solid fa-truck-fast  text-secondary me-2"></i> Miễn phí vận chuyển tại
+                                Tp.HCM
+                            </label>
+                        </div>
+                        <hr>
+                        <div class="form-check mb-1 mt-1">
+                            <label class="form-check-label" for="">
+                                <i class="fa-solid fa-shield text-secondary me-3"></i> Bảo hành chính hãng toàn quốc
+                            </label>
+                        </div>
+                        <hr>
+                        <div class="form-check mb-1 mt-1">
+                            <label class="form-check-label" for="">
+                                <i class="fa-regular fa-handshake text-secondary me-2"></i> Cam kết chính hàng 100%
+                            </label>
+                        </div>
+                        <hr>
+                        <div class="form-check mt-2">
+                            <label class="form-check-label  me-2" for="">
+                                <i class="fa-solid fa-box me-3 text-secondary"></i> 1 đổi 1 nếu sản phẩm lỗi
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="list-group border mt-3">
+                    <button type="button" class="list-group-item list-group-item-action fw-bold bg-title-cl text-white"
+                        aria-current="true">
+                        Có Thể Bạn Thích
+                    </button>
+                    <div class="fz-14 p-3 ">
+                        <div class="form-check mb-1 mt-1">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                <i class="fa-solid fa-truck-fast  text-secondary me-2"></i> Miễn phí vận chuyển tại
+                                Tp.HCM
+                            </label>
+                        </div>
+                        <hr>
+                        <div class="form-check mb-1 mt-1">
+                            <label class="form-check-label" for="">
+                                <i class="fa-solid fa-shield text-secondary me-3"></i> Bảo hành chính hãng toàn quốc
+                            </label>
+                        </div>
+                        <hr>
+                        <div class="form-check mb-1 mt-1">
+                            <label class="form-check-label" for="">
+                                <i class="fa-regular fa-handshake text-secondary me-2"></i> Cam kết chính hàng 100%
+                            </label>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active border-0" id="home-tab" data-bs-toggle="tab"
+                        data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                        aria-selected="true">Mô Tả Sản Phẩm</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link border-0" id="profile-tab" data-bs-toggle="tab"
+                        data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane"
+                        aria-selected="false">Chính Sách Đổi Trả</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active fz-14" id="home-tab-pane" role="tabpanel"
+                    aria-labelledby="home-tab" tabindex="0">{{ sp.detail_description }}<br> <br>
+                    <img src="./Public/img/sp7.webp" alt=""> <br> <br>
+
+                    Điện thoại khá nhẹ khi trọng lượng chỉ đạt 181 gram cùng cạnh viền bo cong nhẹ nhàng kết hợp khung
+                    máy phát phẳng giúp tổng thể hài hòa, dễ dàng cầm nắm hơn. <br> <br>
+
+                    Thay vì sử dụng đảo camera thì Xiaomi lại lựa chọn thiết kế các ống kính riêng biệt ở mặt sau. Phía
+                    dưới Note 12 Turbo 8GB/256GB là nơi chứa cổng chuyển đổi USB-C, lưới tản nhiệt loa và khay thẻ SIM.
+                    Mặc dù không có chỗ cho thẻ nhớ microSD nhưng điện thoại vẫn đi kèm giắc cắm âm thanh 3.5 mm và bộ
+                    phát hồng ngoại. <br> <br>
+
+                    Redmi Note 12 Turbo 8GB/256GB có ba tùy chọn màu: Đen, Xanh và Trắng. Hấp dẫn hơn, Note 12 Turbo
+                    phiên bản Harry Potter tái hiện những chi tiết đặc trưng, thiết kế tinh tế cool ngầu khiến người hâm
+                    mộ bộ tiểu thuyết huyền thoại này mê đắm. <br> <br>
+
+                    Đánh giá màn hình Redmi Note 12 Turbo 8GB/256GB <br> <br>
+
+                    Xiaomi ưu ai trang bị trên Redmi Note 12 Turbo 8GB/256GB tấm nền 120Hz kích thước 6.67 inch hỗ trợ
+                    độ phân giải 1080 x 2400px. Màn hình OLED dạng đục lỗ đi kèm tốc độ lấy mẫu cảm ứng lên tới 240Hz,
+                    giúp các thao tác cũng nhạy hơn trong khi chơi trò chơi. <br> <br>
+
+                    Note 12 Turbo ghi điểm khi sử dụng PWM tần số cao 1920Hz thân thiện với mắt người dùng. Ngoài ra,
+                    việc thưởng thức các chương trình và video trên Netflix và YouTube với chất lượng cao là điều dễ
+                    hiểu vì 12 Turbo có hỗ trợ nội dung HDR10+ và Dolby Vision. <br> <br>
+
+                    Độ sáng màn hình lên tới 1000 nits cũng là một điểm cộng cho Redmi Note 12 Turbo 8GB/256GB. <br>
+                    <br>
+
+                    Đánh giá camera Redmi Note 12 Turbo 8GB/256GB <br> <br>
+
+                    Redmi Note 12 Turbo 8GB/256GB thiết lập ba camera tiêu chuẩn phía sau 64 MP x 8MP x 2 MP. Cảm biến
+                    chính 64 MP OmniVision OV64B40, kích thước 1/2.0" và 0,7µm pixel được ghép nối với khẩu độ f/1.8 và
+                    ống kính có tính năng ổn định quang học. <br> <br>
+
+                    Camera góc siêu rộng vẫn là 8 MP, sử dụng cảm biến IMX355 của Sony, có kích thước khá nhỏ - 1/4.0",
+                    1.12µm và được ghép nối với khẩu độ f/2.2. Ngoài ra, điện thoại còn được trang bị ống kính macro 2
+                    MP thông thường. Cuối cùng, camera selfie sử dụng máy ảnh S5K3P9SP04 16MP của Samsung với khẩu độ
+                    f/2.5. <br> <br>
+
+                    Mặc dù camera 64 MP trên Note 12 Turbo có hơi lỗi thời trong phân khúc tầm trung ở thời điểm hiện
+                    tại nhưng khả năng chụp ảnh vẫn thực sự ấn tượng. Các bức ảnh có độ chi tiết cao, độ sắc nét tuyệt
+                    vời và dải động rộng. Màu sắc rực rỡ nhưng không quá lố. <br> <br>
+
+                    Kỹ thuật zoom 2x chắc chắn trên mức trung bình. Cảnh vật có mức độ chi tiết tốt, giảm thiểu độ sắc
+                    nét và giữ lại kết xuất tổng thể từ chế độ thu phóng 1x tiêu chuẩn. Khi chụp trong điều kiện thiếu
+                    sáng, Redmi Note 12 Turbo cũng không gây thất vọng. Tuy nhiên, chất lượng selfie có phần kém hấp
+                    dẫn. Có rất nhiều chi tiết trong bức ảnh và màu sắc chưa chân thật. <br> <br>
+
+                    Đánh giá cấu hình Redmi Note 12 Turbo 8GB/256GB <br> <br>
+
+                    Redmi Note 12 Turbo 8GB/256GB hoạt động nhờ bộ vi xử lý Snapdragon 7+ Gen 2 hoàn toàn mới dựa trên
+                    quy trình sản xuất N4 4nm tiên tiến của TSMC. Như thường lệ, SoC gồm 8 nhân nhưng phân thành các cụm
+                    lõi khác so với các chipset cũ hơn trong dòng Snapdragon 700 <br> <br>
+
+                    Lõi hiệu năng cao chính là Cortex-X2 tốc độ 2.91 GHz, kết hợp với 3 lõi Cortex-A710 tốc độ 2.49 GHz
+                    cùng với các lõi Cortex-A510 tiết kiệm năng lượng chạy ở tốc độ 1.8 GHz. Adreno 725 có tốc độ 580
+                    MHz đảm nhận các tác vụ đồ họa chuyên sâu. <br> <br>
+
+                    Hiệu suất mà Snapdragon 7+ Gen 2 mang lại rất khó để có đối thủ vượt qua trong tầm giá . Redmi Note
+                    12 Turbo 8GB/256GB hứa hẹn cân mọi tác vụ, chơi game giải trí cấu hình cao. Tốc độ xử lý cũng nhanh
+                    chóng, không gian lưu trữ 8GB/256GB đủ rộng. <br> <br>
+
+                    Hệ thống làm mát thụ động buồng hơi tiên tiến, mà Xiaomi gọi là Công nghệ làm mát bằng chất lỏng
+                    2.0, hiệu suất duy trì khá thấp. <br> <br>
+
+                    Điện thoại tích hợp viên pin dung lượng 5000 mAh, hỗ trợ sạc 67W và chạy giao diện MIUI 14 dựa trên
+                    Android 13. <br> <br>
+
+                    Thông số kỹ thuật <br> <br>
+
+                    Kiểu màn hình Công nghệ màn hình OLED, 68B colors, 120Hz, Dolby Vision, HDR10+ Độ phân giải 1080 x
+                    2400 pixels Màn hình rộng 6.67 inches Độ sáng tối đa 1000 nits Camera sau Độ phân giải camera sau 64
+                    MP x 8 MP x 2 MP Quay phim 4K@30fps, 1080p@30/60/120/240fps Đèn Flash LED flash, HDR, panorama
+                    Camera trước Độ phân giải camera trước 16 MP Hệ điều hành & CPU Hệ điều hành Android Chip xử lý
+                    Snapdragon 7+ Gen 2 (4 nm) Tốc độ CPU Octa-core (1x2.91 GHz Cortex-X2 & 3x2.49 GHz Cortex-A710 &
+                    4x1.8 GHz Cortex-A510) Chip đồ họa Adreno 725 Bộ nhớ & Lưu trữ RAM 8 GB Bộ nhớ trong 256 GB Danh bạ
+                    Không giới hạn Kết nối Mạng di động Hỗ trợ 5G Sim Dual SIM Wifi Wi-Fi 802.11 a/b/g/n/ac/6e,
+                    dual-band Bluetooth 5.3, A2DP, LE Cổng kết nối sạc USB Type-C 2.0 Jack tai nghe 3.5mm Kết nối khác
+                    OTG Pin & Sạc Dung lượng pin 5000 mAh Loại pin Li-Po Hỗ trợ sạc tối đa 67W Sạc kèm theo máy 67W
+                    Thông tin chung Kích thước khối lượng 161.1 x 75 x 7.9 mm, nặng 181 g Thông tin sản phẩm Thương hiệu
+                    Xiaomi
+                </div>
+                <div class="tab-pane fade fz-14" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                    tabindex="0">
+                    
+                    + Sản phẩm lỗi, hỏng do quá trình sản xuất hoặc vận chuyện
+                    <br>
+                    + Nằm trong chính sách đổi trả sản phẩm của Bean
+                    <br>
+                    + Sản phẩm còn nguyên tem mác không bị rớt vỡ, vô nước
+                    <br>
+                    + Thời gian đổi trả nhỏ hơn 15 ngày kể từ ngày nhận hàng
+                    <br>
+                    + Chi phí bảo hành về sản phẩm, vận chuyển khách hàng chịu chi phí
+                    <br><strong>Điều kiện đổi trả hàng</strong>
+                    Điều kiện về thời gian đổi trả: trong vòng 07 ngày kể từ khi nhận được hàng và phải liên hệ gọi ngay
+                    cho chúng tôi theo số điện thoại trên để được xác nhận đổi trả hàng. <br>
+                    <strong>Điều kiện đổi trả hàng</strong>:
+                    
+                    - Sản phẩm gửi lại phải còn nguyên đai nguyên kiện
+                   <br>
+                    - Phiếu bảo hành (nếu có) và tem của công ty trên sản phẩm còn nguyên vẹn.
+                   <br>
+                    - Sản phẩm đổi/ trả phải còn đầy đủ hộp, giấy hướng dẫn sử dụng và không bị trầy xước, bể.
+                   <br>
+                    - Quý khách chịu chi phí vận chuyển, đóng gói, thu hộ tiền, chi phí liên lạc tối đa tương đương 10%
+                   <br> giá trị đơn hàng.
+                </div>
+            </div>
+        </div>
+        <h1 style="font-size: 16px; font-weight: bold;" class="mb-3 mt-3">Đánh gia sản phẩm</h1>
+
+        <form class="row g-3" ng-submit="comment()">
+            <div class="form-floating ">
+                <textarea class="form-control pt-2 pb-2" placeholder="" id="floatingTextarea2"
+                    style="height: 140px" ng-model="content" name="content"></textarea>
+                <label for="floatingTextarea2 ps-2"></label>
+            </div>
+            <div class="col-12 mt-4 ">
+                <button type="submit" class="btn btn-primary text-end ">Xác Nhận</button>
+            </div>
+        </form>
+        <div class="mt-5 mb-5">
+            <h6 class="">Bình Luận ({{ listCmt.length }})</h6>
+            <div class="fz-14 d-flex ms-3 mt-3 position-relative" ng-repeat="cmt in listCmt | orderBy:'-date' | limitTo:limit">
+                <img src="../Public/img/avt-conan.jpg" class="rounded-circle" style="width: 60px; height: 60px;" alt="">
+                <div class="ms-3">
+                    <span class="fs-6">
+                        <h6>{{ cmt.name }}</h6>
+                    </span>
+                    <span>
+                        <div class="fz-10 mb-2">
+                            <i class="fa-regular fa-clock fz-10"></i>
+                            <Span>Ngày Đăng: {{ cmt.date }}</Span>
+                        </div>
+                    </span>
+                    <p class="text-dark">{{ cmt.content }}</p>
+                </div>
+                <div class="text-end position-absolute end-0">
+                    <button class="btn btn-outline-danger border-0" ng-if="cmt.idUser==user.id" ng-click="delCmt(cmt.id)">Xóa</button>
+                </div>
+            </div>
+            <div ng-hide="limit >= listCmt.length" class="text-center">
+                <div class="btn btn-outline-info text-secondary" ng-click="limit = limit + 5">Xem Thêm</div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <h2 class="fs-4 mb-2 fw-medium text-warning">CÓ THỂ BẠN THÍCH</h2>
+            <div class="col-md-3 p-2" ng-repeat="sp in productCategories | limitTo:4:10">
+                <div class="card">
+                    <div class="head-card d-flex p-2">
+                        <span class="text-bg-danger rounded-end ps-2 pe-2 pt-1 fz-10">{{ ((sp.del -
+                            sp.price)/sp.del)*100 |
+                            number:0 }}%</span>
+                        <span class="ms-auto"><i class="fa-regular fa-heart "></i></span>
+                    </div>
+                    <img src="Public/img/{{ sp.img }}" class="card-img-top scale-hover" alt="...">
+                    <span
+                        class="text-white ms-2  mt-5  ps-3 pe-3  rounded-pill position-absolute fz-14 top-50  start-0 translate-middle-y"
+                        style="background-color: var(--subColor); ">{{ sp.hot }}</span>
+
+                    <div class="card-body p-2">
+                        <h6 class="fw-light"><a href="#" class="text-break w-100 text-hover">{{ sp.name }}</a></h5>
+                            <div class="d-flex ">
+                                <span class="text-danger">{{ sp.price | currency:" ":0 }} VNĐ<br>
+                                    <del class="text-secondary fz-14">{{ sp.del | currency:" ":0 }} VNĐ</del></span>
+                                <span class="ms-auto align-middle"><a href="#"><i
+                                            class="fa-solid fa-cart-plus p-2 bg-info rounded text-white scale-hover"></i></a></span>
+                            </div>
+                            <p
+                                class="card-text mb-2 mt-2  bg-success p-0 rounded-pill fz-10 text-center text-white">
+                                Đã bán {{ sp.sold }} sản phẩm</p>
+                            <p class="card-text bg-light p-0 rounded fz-10 text-center text-dark pt-1 pb-1">{{ sp.gift }}</p>
+                            <div class="head-card d-flex p-0">
+                                <span class="fz-14 ">
+                                    <div class="rating">
+                                        <span class="fa fa-star text-warning"></span>
+                                        <span class="fa fa-star text-warning"></span>
+                                        <span class="fa fa-star text-warning"></span>
+                                        <span class="fa fa-star text-warning"></span>
+                                        <span class="fa fa-star text-warning"></span>
+                                    </div>
+                                </span>
+                                <span class="ms-auto fz-14">{{ sp.feedback }}</span>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="fs-4 mb-2 mt-4 fw-medium text-warning">SẢN PHẨM LIÊN QUAN</h2>
+            <div class="col-md-3 p-2" ng-repeat="sp in productCategories | filter:{brand: brand}| limitTo:4">
+                <div class="card">
+                    <div class="head-card d-flex p-2">
+                        <span class="text-bg-danger rounded-end ps-2 pe-2 pt-1 fz-10">{{ ((sp.del -
+                            sp.price)/sp.del)*100 |
+                            number:0 }}%</span>
+                        <span class="ms-auto"><i class="fa-regular fa-heart "></i></span>
+                    </div>
+                    <img src="Public/img/{{ sp.img }}" class="card-img-top scale-hover" alt="...">
+                    <span
+                        class="text-white ms-2  mt-5  ps-3 pe-3  rounded-pill position-absolute fz-14 top-50  start-0 translate-middle-y"
+                        style="background-color: var(--subColor); ">{{ sp.hot }}</span>
+
+                    <div class="card-body p-2">
+                        <h6 class="fw-light"><a href="#" class="text-break w-100 text-hover">{{ sp.name }}</a></h5>
+                            <div class="d-flex ">
+                                <span class="text-danger">{{ sp.price | currency:" ":0 }} VNĐ<br>
+                                    <del class="text-secondary fz-14">{{ sp.del | currency:" ":0 }} VNĐ</del></span>
+                                <span class="ms-auto align-middle"><a href="#"><i
+                                            class="fa-solid fa-cart-plus p-2 bg-info rounded text-white scale-hover"></i></a></span>
+                            </div>
+                            <p
+                                class="card-text mb-2 mt-2  bg-success p-0 rounded-pill fz-10 text-center text-white">
+                                Đã bán {{ sp.sold }} sản phẩm</p>
+                            <p class="card-text bg-light p-0 rounded fz-10 text-center text-dark pt-1 pb-1">{{ sp.gift }}</p>
+                            <div class="head-card d-flex p-0">
+                                <span class="fz-14 ">
+                                    <div class="rating">
+                                        <span class="fa fa-star text-warning"></span>
+                                        <span class="fa fa-star text-warning"></span>
+                                        <span class="fa fa-star text-warning"></span>
+                                        <span class="fa fa-star text-warning"></span>
+                                        <span class="fa fa-star text-warning"></span>
+                                    </div>
+                                </span>
+                                <span class="ms-auto fz-14">{{ sp.feedback }}</span>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

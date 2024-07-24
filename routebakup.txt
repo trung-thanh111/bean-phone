@@ -1,0 +1,48 @@
+<?php
+
+use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeControllers;
+use App\Http\Controllers\ProductControllers;
+use App\Http\Controllers\PostControllers;
+use App\Http\Controllers\MailControllers;
+use Illuminate\Support\Facades\Route;
+
+// index
+Route::get('/', [HomeControllers::class, 'index'])->name('home.index');
+Route::get('/contact', [HomeControllers::class, 'contact'])->name('home.contact');
+Route::get('/about', [HomeControllers::class, 'about'])->name('home.about');
+
+// product
+Route::get('/product', [ProductControllers::class, 'index'])->name('product.index');
+Route::get('/product/category/{id}', [ProductControllers::class, 'category'])->name('product.category');
+Route::get('/product/brand/{id}', [ProductControllers::class, 'brand'])->name('product.brand');
+Route::get('/product/detail/{id}', [ProductControllers::class, 'detail'])->name('product.detail');
+
+// post
+Route::get('/post', [PostControllers::class, 'index'])->name('post.index');
+Route::get('/post/category/{id}', [PostControllers::class, 'category'])->name('post.category');
+Route::get('/post/detail/{id}', [PostControllers::class, 'detail'])->name('post.detail');
+
+//cart 
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart', [CartController::class, 'store'])->name('cart.store'); //create cart
+Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update'); // update cart
+Route::delete('/cart/destroy/{id}', [CartController::class, 'destroy'])->name('cart.destroy'); //xóa 1
+Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear'); // clear cart
+
+// checkout
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('cart.checkout');
+
+
+// search products
+Route::get('/search', [ProductControllers::class, 'search'])->name('product.search');
+//send mail
+Route::get('/send-mail', [MailControllers::class, 'sendMail'])->name('contact.sendmail');
+Route::post('/send-mail', [MailControllers::class, 'sendMail'])->name('contact.sendmail');
+
+
+// filter product
+Route::get('/filterBySort', [AjaxController::class, 'sort'])->name('product.sort');

@@ -1,0 +1,301 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #f6f6f6;
+  scroll-behavior: smooth;
+}
+
+i {
+  font-size: 20px;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+:root {
+  --bg: #313942;
+  --ghost: #528cce;
+  --heading: ;
+  --indigo: #6610f2;
+  --mainColor: #503eb6;
+  --subColor: #ff901c;
+  --textColor: #00090f;
+  --topHeader: #b8bcff;
+  --bgHeader: #ffffff;
+  --bgHeader2: #503eb6;
+  --topHeader2: #fcc9f9;
+  --bgFlash: linear-gradient(#503eb6, #a9a3c3);
+  --gutter: 30px;
+}
+
+.sct-color {
+  background: linear-gradient(#503eb6, rgb(232, 217, 220));
+}
+
+.sct2-color {
+  background: linear-gradient(to right, #b8bcff, rgb(232, 217, 220));
+}
+
+.scale-hover {
+  transition: transform 0.4s ease;
+}
+
+.text-hover {
+  color: gray;
+}
+
+.text-hover:hover {
+  color: #503eb6;
+}
+
+.text-color-hover {
+  color: #333;
+}
+
+.text-color-hover:hover {
+  color: #efb30d;
+}
+
+.button-hover {
+  color: #333;
+}
+
+.button-hover:hover {
+  color: white;
+  background-color: #efb30d;
+}
+
+.scale-hover:hover {
+  transform: scale(0.95);
+  color: #efb30d;
+}
+
+.fz-10 {
+  font-size: 10px;
+}
+
+.fz-12 {
+  font-size: 12px;
+}
+
+.fz-14 {
+  font-size: 14px;
+}
+.fz-16 {
+  font-size: 16px;
+}
+.fz-18 {
+  font-size: 18px;
+}
+.fz-20 {
+  font-size: 20px;
+}
+
+
+.bg-title-color {
+  background-color: #fd7e14;
+}
+
+.list-group-item {
+  border-bottom: none !important;
+  border: none;
+}
+
+.list-group-item .nav-link {
+  font-size: 14px;
+}
+
+.custom-text {
+  max-width: 100%;
+  /* Chỉ định chiều rộng tối đa */
+  display: block;
+  /* Hiển thị văn bản dưới dạng khối */
+  overflow: hidden;
+  /* Ẩn nội dung vượt ra ngoài */
+  white-space: nowrap;
+  /* Ngăn văn bản tràn hàng */
+  text-overflow: ellipsis;
+  /* Hiển thị dấu ba chấm (...) khi văn bản bị cắt ngắn */
+}
+
+/* 404 */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+/* Biến */
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+/* Body */
+main {
+  background-color: var(--bg);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Main */
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Heading 1 */
+h1 {
+  color: var(--heading);
+  font-size: 12.5rem;
+  letter-spacing: .10em;
+  margin: .025em 0;
+  text-shadow: .05em .05em 0 rgba(0, 0, 0, .25);
+  white-space: nowrap;
+}
+
+/* Heading 1 - Responsive */
+@media(max-width: 30rem) {
+  h1 {
+    font-size: 8.5rem;
+  }
+}
+
+/* Heading 1 - Animation */
+h1>span {
+  animation: spooky 2s alternate infinite linear;
+  color: var(--ghost);
+  display: inline-block;
+}
+
+/* Heading 2 */
+h2 {
+  color: var(--heading);
+  margin-bottom: .40em;
+}
+
+/* Paragraph */
+p {
+  /* color: #ccc; */
+  margin-top: 0;
+}
+.bg-main{
+  background-color: #503eb6;
+}
+@keyframes spooky {
+  from {
+    transform: translatey(.15em) scaley(.95);
+  }
+
+  to {
+    transform: translatey(-.15em);
+  }
+}
+
+.bg-title-cl {
+  background: linear-gradient(#044492, #06b1b1);
+}
+
+.fa-star {
+  color: rgb(255, 183, 0);
+}
+
+.card.shadow {
+  padding: 5px;
+  width: 243px;
+  height: 486px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.d-flex.justify-content-end.mt-5 {
+  height: 120px;
+}
+
+.small.text-muted {
+  margin-right: 20px;
+}
+
+/* quantity plus minus */
+* {
+  box-sizing: border-box;
+}
+
+
+.quantity {
+  max-width: 150px;
+  display: flex;
+  border: 2px solid #3498db;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 10px 0 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quantity button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  width: 50px;
+  height: auto;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.quantity button:hover {
+  background-color: #2980b9;
+}
+
+.input-box {
+  width: 60px;
+  text-align: center;
+  border: none;
+  padding: 8px 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Hide the number input spin buttons */
+.input-box::-webkit-inner-spin-button,
+.input-box::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-box[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.product-description{
+  color: #333 !important;
+}
+
+.text-truncate.text-hover.fs-6.custom-text h1{
+  font-size: 1.3rem;
+  letter-spacing: .10em;
+  margin: .025em 0;
+  text-shadow: .05em .05em 0 rgba(0, 0, 0, .25);
+  white-space: nowrap;
+}
+.size-full{
+  width: 950px !important;
+  object-fit: cover !important;
+}
+.col-4.rounded.bg-light.overflow-hidden{
+  padding: 0 !important;
+}
+.display-none{
+  display: none !important;
+}

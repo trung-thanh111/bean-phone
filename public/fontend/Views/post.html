@@ -1,0 +1,267 @@
+<div class="bg-light ">
+        <div class="row ms-3  pt-3">
+            <nav aria-label="breadcrumb ">
+                <ol class="breadcrumb container">
+                    <li class="breadcrumb-item"><a href="#!home">Trang Chủ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Tin Tức</li>
+                </ol>
+            </nav>
+
+        </div>
+    </div>
+    </div>
+    <div class="container mb-5">
+        <div class="row mb-5">
+            <div class="col-9">
+                <h1 style="font-size: 16px; font-weight: medium;" class="mb-3 mt-3 rounded-2 bg-light pt-3 pb-3 ps-3">
+                    TIN TỨC</h1>
+                <div class="row">
+                    <div class="col-7 rounded-2 border" ng-repeat="post in Posts | limitTo:1">
+                        <div class="img text-center mb-2">
+                            <img src="Public/img/{{ post.img }}" alt=""
+                                class="scale-hover ">
+                            <br>
+                        </div>
+                        <a href="#!postDetail/{{ post.id  }}" class="fs-5 mt-2 mb-3 ms-2 text-start  text-hover">{{ post.title }}</a>
+                        <div>
+                            <p class="text-truncate ms-2 text-hover"><a href="#" class="align-start">{{ post.content }}</a></p>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="bv d-flex mb-3 ms-3" ng-repeat="post in Posts | limitTo:4:1">
+                            <img src="Public/img/{{ post.img }}" alt="" class="rounded-2 scale-hover"
+                                style="width: 130px;">
+                            <a href="#!postDetail/{{ post.id  }}" class="fs-6 fw-bolder ms-4 text-hover">{{ post.title }}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12  mt-5">
+                    <div class="bv d-flex mb-3" ng-repeat="post in Posts | orderBy:ramdom | limitTo:4">
+                        <img src="Public/img/{{ post.img }}" class="scale-hover" alt=""
+                            style="width: 245px; height: 145px;">
+                        <div class="content ms-4 ">
+                            <div class="col-7">
+                                <a href="#!postDetail/{{ post.id  }}" class=" text-truncate fw-bold text-hover fs-6 text-break custom-text">{{ post.title }}</a>
+                            </div>
+                            <span class="fz-14 d-flex mt-2">
+                                Tác Giả: {{ post.author }}
+                                <p class="ms-4 fz-14">Ngày Đăng: {{ post.date }}</p>
+                            </span>
+                            <div>
+                                <p class="fz-14 mt-3 text-truncate text-break text-hover custom-text">
+                                    <a href="#!postDetail/{{ post.id  }}" >{{ post.title }}</a>
+                                </p>
+                            </div>
+                        </div>
+                        <span class=" border-1 text-dark mt-2 mb-2">
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 mt-3">
+                <ul class="list-group fz-14">
+                    <li class="list-group-item active list-group-item-info "><span class="">DANH MỤC</span></li>
+                    <li class="list-group-item p-0">
+                        <div class="accordion accordion-flush " id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fz-14" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                        aria-expanded="false" aria-controls="flush-collapseOne">
+                                        Iphone
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item"><a class="nav-link" href="#">Asus</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Msi</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Lenovo</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Macbook</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item p-0">
+                        <div class="accordion accordion-flush " id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fz-14" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                        aria-expanded="false" aria-controls="flush-collapseTwo">
+                                        SamSung
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item"><a class="nav-link" href="#">Asus</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Msi</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Lenovo</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Macbook</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item p-0">
+                        <div class="accordion accordion-flush " id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fz-14" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                        aria-expanded="false" aria-controls="flush-collapseThree">
+                                        Xiaomi
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item"><a class="nav-link" href="#">Asus</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Msi</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Lenovo</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Macbook</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item p-0">
+                        <div class="accordion accordion-flush " id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fz-14" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
+                                        aria-expanded="false" aria-controls="flush-collapseFour">
+                                        Realme
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item"><a class="nav-link" href="#">Asus</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Msi</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Lenovo</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Macbook</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item p-0">
+                        <div class="accordion accordion-flush " id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fz-14" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
+                                        aria-expanded="false" aria-controls="flush-collapseFive">
+                                        VSmart
+
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item"><a class="nav-link" href="#">Asus</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Msi</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Lenovo</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Macbook</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item p-0">
+                        <div class="accordion accordion-flush " id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fz-14" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseSix"
+                                        aria-expanded="false" aria-controls="flush-collapseSix">
+                                        SamSung
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseSix" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="nav flex-column list-group-flush">
+                                            <li class="nav-item"><a class="nav-link" href="#">Asus</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Msi</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Lenovo</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Macbook</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item p-0">
+                        <div class="accordion accordion-flush " id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fz-14" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven"
+                                        aria-expanded="false" aria-controls="flush-collapseSeven">
+                                        SamSung
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseSeven" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="nav flex-column list-group-flush">
+                                            <li class="nav-item"><a class="nav-link" href="#">Asus</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Msi</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Lenovo</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Macbook</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item p-0 ms-1">
+                        <a href="#" class="list-group-item pt-3 pb-3">Oppo</a>
+                    </li>
+
+                    <li class="list-group-item p-0 ms-1">
+                        <a href="#" class="list-group-item pt-3 pb-3">LeNoVo</a>
+                    </li>
+
+                    <li class="list-group-item p-0 ms-1">
+                        <a href="#" class="list-group-item pt-3 pb-3">ViVo</a>
+                    </li>
+
+
+
+                </ul>
+                <ul class="list-group fz-14 mt-3">
+                    <li class="list-group-item active list-group-item-success "><span class="">TIN TỨC NỔI BẬT</span>
+                    </li>
+
+                    <li class="list-group-item p-0 mt-3" ng-repeat="post in Posts | limitTo:5">
+                        <a href="#" class="list-group-item p-0               ">
+                            <div class="bv d-flex">
+                                <img src="Public/img/{{ post.img }}" alt="" class="rounded-2 scale-hover"
+                                    style="width: 110px;">
+                                <div class="content ms-2">
+                                    <a href="#!postDetail/{{ post.id }}" class="fz-14 fw-bold  text-hover ">{{ post.title }}</a> <br>
+                                </div>
+                            </div>
+                        </a>
+                        <hr class="mt-2 mb-1">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

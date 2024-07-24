@@ -1,0 +1,16 @@
+1.tạo csdl migration 
++ bảng orders: id, date_buy, description, payment_method ->df(cod), user_id, total->pending, status, timesstemps
++bảng order_items: id, order_id, product_id, quantity, price, 
+
+- khai báo quan hệ giữa các bảng: ordersv - orderItems , orders - user ,order_items - product
+
+triển khai 
++ tạo migration 
++ tạo model khai báo quan hệ 
++ tạo route
++ tạo controller 
++ tạo view
+
+- bình luận 
+bảng Comments: id, content, rate, hot, user_id(fk), product_id(fk), post_id(fk), date_submit, publish, tímestamp
+relation 1 user - n bình luận, 1 product - n bình luận, 1bv - n bl

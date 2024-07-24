@@ -1,0 +1,17 @@
+1. route: 
+- get() -> load view form contact
+- post() -> gửi mail đến admin
+2. env -> cấu hình
+    MAIL_MAILER=smtp
+    MAIL_HOST=smtp.gmail.com
+    MAIL_PORT=465
+    MAIL_USERNAME=thanhduy212004@gmail.com
+    MAIL_PASSWORD=Mật khẩu ứng dụng
+    MAIL_ENCRYPTION=ssl
+    MAIL_FROM_ADDRESS="beanphone@support.com"
+    MAIL_FROM_NAME="BeanPhone Store"
+3.cấu hình config/mail.php
+4.tạo mailable -> php artisan make:mail sendMail
+5.controller gửi mail -> 
+6.view nhận mail từ người dùng
+7.chạy lệnh php artisan config:cache

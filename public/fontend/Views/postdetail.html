@@ -1,0 +1,348 @@
+<div class="bg-light ">
+    <div class="row ms-3  pt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb container">
+                <li class="breadcrumb-item"><a href="index.html">Trang Chủ</a></li>
+                <li class="breadcrumb-item"><a href="post.html">Tin Tức</a></li>
+                <li class="breadcrumb-item active text-info" aria-current="page">Chi Tiết Tin Tức</li>
+            </ol>
+        </nav>
+
+    </div>
+</div>
+</div>
+<div class="container mb-5">
+    <div class="row mb-5">
+        <div class="col-9">
+            <div class="w-100">
+                <h1 class="fs-3 text-truncate">{{ post.title }}</h1>
+            </div>
+            <div class="d-flex fz-14 text-secondary mt-3 mb-3">
+                <div>
+                    <i class="fa-regular fa-user fz-14"></i>
+                    <Span>Tác Giả: <strong> {{ post.author }}</strong></Span>
+                </div>
+                <div class="ms-5">
+                    <i class="fa-regular fa-clock fz-14"></i>
+                    <Span>Ngày Đăng: {{ post.date }}</Span>
+                </div>
+            </div>
+            <div class="content fz-14 text-dark">
+                <p class="text-dark">{{ post.content }}</p>
+                <img src=".Public/Public/img/{{ post.img }}" class="w-75 mt-2 mb-2" alt="">
+                <h2 class="fs-6 mb-3">Thông số chi tiết về pin của dòng iPhone 15 Series</h2>
+                <p class="text-dark">Như thường lệ, Apple vẫn luôn gây tò mò vì không công bố chính xác dung lượng pin
+                    thực tế của các
+                    thiết bị mới ra mắt trong bảng thông số kỹ thuật. Thay vào đó, thương hiệu đã khẳng định thời
+                    lượng sử dụng của iPhone mới lên tới cả ngày dài. Điều đó dường như bất khả thi vì điện thoại
+                    iPhone luôn có điểm trừ về pin yếu.</p>
+                <p class="text-dark">Không làm các iFan và người hâm mộ thất vọng, dòng iPhone mới có thể chiến nhiều
+                    tựa game, xem
+                    phim lướt web liên tục trong 20 giờ. Điện thoại sẽ là người bạn đồng hành tuyệt vời, là trợ thủ
+                    đắc lực cho mọi hoạt động đời đống của người dùng.</p>
+                <p class="text-dark">Cả bốn mẫu iPhone 15 đều tích hợp viên pin lớn hơn phiên bản tiền nhiệm. Mức tăng
+                    là không đáng
+                    kể do đó sự cải thiện vượt trội về thời gian sử dụng chắc chắn đến từ bộ vi xử lý mới và màn
+                    hình tối ưu hơn.</p>
+                <p class="text-dark">Nói sâu hơn về chip, A17 Pro sở hữu lõi tốc độ 3.78GHz, bao gồm 6 nhân giúp tăng
+                    10% hiệu năng so
+                    với A16 Bionic. Màn hình năm nay cũng không phải điểm nhấn trên hai mẫu thường nhưng hai phiên
+                    bản Pro cao cấp hơn lại gây ấn tượng nhờ nội dung hiển thị xuất sắc cũng như tấm nền hạn chế mất
+                    mát năng lượng.</p>
+                <span class="fw-bold text-danger"> Tham Khảo các sản phẩm mới chủa chúng tôi
+                </span>
+                <div class="card mb-3 mt-4" style="max-width: 540px;">
+                    <div class="row g-0" ng-repeat=" sp in Products | limitTo:1">
+                        <div class="col-md-4">
+                            <img src="Public/img/{{ sp.img }}" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ sp.name }}</h5>
+                                <p class="card-text">Giá: <strong class="text-danger">{{ sp.price | currency:" ":0 }}
+                                        VNĐ</strong></p>
+                                <p class="card-text">Giá Thị trường: <del>{{ sp.del | currency:" ":0 }} VNĐ</del></p>
+                                <p class="card-text btn btn-success text-light"><a type="submit"  ng-click="addToCart(sp)">Mua Ngay</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="fs-6 mb-3">Có nên nâng cấp lên iPhone 15 Series?</h2>
+                <p class="text-dark">Sau mỗi sự kiện ra mắt iPhone, người tiêu dùng đặc biệt là iFan lại phân vân không
+                    biết nên mua
+                    iPhone đời cũ với mức giá siêu hời hay nâng cấp hẳn lên dòng mới. Nắm bắt tâm lý khách hàng, Di
+                    Động Thông Minh đã tổng hợp một số nâng cấp đáng cú ý của bốn chiếc điện thoại iPhone 15 Series
+                    với hi vọng giúp người đọc tìm ra cho mình chiếc smartphone phù hợp.</p>
+                <p class="text-dark">Để trả lời cho câu hỏi có nên mua iPhone 15 Series hay không, chúng ta cần biết
+                    chính xác những
+                    cải tiến trên toàn bộ dòng sản phẩm. Dưới đây là một số ưu điểm nổi trội:</p>
+                <ul class="list-unstyled">
+                    <li>iPhone 15 Series vẫn sở hữu vẻ ngoài thời trang, thiết kế đẳng cấp không bao giờ lỗi thời.
+                        Trong đó bộ đôi 15 Pro và 15 Pro Max được hoàn thiện bởi chất liệu titan nhẹ hơn, bền bỉ
+                        hơn.</li>
+                    <li>Màn hình hiển thị sắc nét, hỗ trợ tính năng Dynamic Island</li>
+                    <li>Camera chính 48 MP và ống kính tiềm vọng đầu tiên</li>
+                    <li>Hiệu năng mạnh mẽ, đứng đầu phân khúc, cân mọi tác vụ</li>
+                    <li>Sạc USB-C, thời lượng pin tính bằng ngày</li>
+                </ul>
+                <p class="text-dark">iPhone 15 Series là một bản nâng cấp hoàn hảo so với iPhone 14. Điện thoại đã loại
+                    bỏ một số chi
+                    tiết gây khó chịu, khắc phục nhiều nhược điểm của thế hệ trước. Giá bán không quá chênh lệnh do
+                    đó iPhone 15 sẽ là cái tên đầy hứa hẹn. Nhiều chuyên gia nhận định với mức giá hơn 23 triệu,
+                    iPhone 15 Series sẵn sàng cháy hàng tại nhiều hệ thống.</p>
+            </div>
+            <h1 style="font-size: 16px; font-weight: bold;" class="mb-3 mt-3">Nhận Xét Bài Viết</h1>
+            <form class="row g-3" ng-submit="comment()">
+                <div class="col-md-6 mb-2">
+                    <input type="text" class="form-control pt-2 pb-2" id="inputht4" placeholder="Họ Và Tên" ng-if="!user.id">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <input type="email" class="form-control pt-2 pb-2" id="inputEmail4" placeholder="Email" ng-if="!user.id">
+                </div>
+                <div class="col-12 mb-2">
+                    <input type="text" class="form-control pt-2 pb-2" id="inputAddress" placeholder="Số điện Thoại"ng-if="!user.id">
+                </div>
+                <div class="form-floating ">
+                    <textarea class="form-control pt-2 pb-2" placeholder="" id="floatingTextarea2"
+                        style="height: 140px" ng-model="content" name="content"></textarea>
+                    <label for="floatingTextarea2 ps-2"></label>
+                </div>
+
+                <div class="col-12 mt-4 ">
+                    <button type="submit" class="btn btn-primary text-end ">Xác Nhận</button>
+                </div>
+            </form>
+            <div class="mt-5 mb-5">
+                <h6 class="">Bình Luận ({{ listCmt.length }})</h6>
+                <div class="fz-14 d-flex ms-3 mt-3 position-relative" ng-repeat="cmt in listCmt | orderBy:'-date' | limitTo:limit">
+                    <img src="Public/img/avt-conan.jpg" class="rounded-circle" style="width: 60px; height: 60px;" alt="">
+                    <div class="ms-3">
+                        <span class="fs-6">
+                            <h6>{{ cmt.name }}</h6>
+                        </span>
+                        <span>
+                            <div class="fz-10 mb-2">
+                                <i class="fa-regular fa-clock fz-10"></i>
+                                <Span>Ngày Đăng: {{ cmt.date }}</Span>
+                            </div>
+                        </span>
+                        <p class="text-dark">{{ cmt.content }}</p>
+                    </div>
+                    <div class="text-end position-absolute end-0">
+                        <button class="btn btn-outline-danger border-0" ng-if="cmt.idUser==user.id" ng-click="delCmt(cmt.id)">Xóa</button>
+                    </div>
+                </div>
+                <div ng-hide="limit >= listCmt.length" class="text-center">
+                    <div class="btn btn-outline-info text-secondary" ng-click="limit = limit + 5">Xem Thêm</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 mt-3">
+            <ul class="list-group fz-14">
+                <li class="list-group-item active list-group-item-info "><span class="">DANH MỤC</span></li>
+                <li class="list-group-item p-0">
+                    <div class="accordion accordion-flush " id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fz-14" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                    Iphone
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a class="nav-link" href="#">Asus</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Msi</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Lenovo</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Macbook</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item p-0">
+                    <div class="accordion accordion-flush " id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fz-14" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                    aria-controls="flush-collapseTwo">
+                                    SamSung
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a class="nav-link" href="#">Asus</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Msi</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Lenovo</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Macbook</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item p-0">
+                    <div class="accordion accordion-flush " id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fz-14" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                    aria-controls="flush-collapseThree">
+                                    Xiaomi
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a class="nav-link" href="#">Asus</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Msi</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Lenovo</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Macbook</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item p-0">
+                    <div class="accordion accordion-flush " id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fz-14" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                    aria-controls="flush-collapseFour">
+                                    Realme
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a class="nav-link" href="#">Asus</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Msi</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Lenovo</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Macbook</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item p-0">
+                    <div class="accordion accordion-flush " id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fz-14" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                    aria-controls="flush-collapseFive">
+                                    VSmart
+
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a class="nav-link" href="#">Asus</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Msi</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Lenovo</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Macbook</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="list-group-item p-0">
+                    <div class="accordion accordion-flush " id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fz-14" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseSix" aria-expanded="false"
+                                    aria-controls="flush-collapseSix">
+                                    SamSung
+                                </button>
+                            </h2>
+                            <div id="flush-collapseSix" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <ul class="nav flex-column list-group-flush">
+                                        <li class="nav-item"><a class="nav-link" href="#">Asus</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Msi</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Lenovo</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Macbook</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item p-0">
+                    <div class="accordion accordion-flush " id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fz-14" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseSeven" aria-expanded="false"
+                                    aria-controls="flush-collapseSeven">
+                                    SamSung
+                                </button>
+                            </h2>
+                            <div id="flush-collapseSeven" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <ul class="nav flex-column list-group-flush">
+                                        <li class="nav-item"><a class="nav-link" href="#">Asus</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Msi</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Lenovo</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Macbook</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item p-0 ms-1">
+                    <a href="#" class="list-group-item pt-3 pb-3">Oppo</a>
+                </li>
+
+                <li class="list-group-item p-0 ms-1">
+                    <a href="#" class="list-group-item pt-3 pb-3">LeNoVo</a>
+                </li>
+
+                <li class="list-group-item p-0 ms-1">
+                    <a href="#" class="list-group-item pt-3 pb-3">ViVo</a>
+                </li>
+
+
+
+            </ul>
+            <ul class="list-group fz-14 mt-3">
+                <li class="list-group-item active list-group-item-success "><span class="">TIN TỨC NỔI BẬT</span>
+                </li>
+
+                <li class="list-group-item p-0 mt-3" ng-repeat="post in Posts">
+                    <a href="#!postDetail/{{ post.id  }}" class="list-group-item p-0               ">
+                        <div class="bv d-flex">
+                            <img src="Public/img/{{ post.img }}" alt="" class="rounded-2 scale-hover"
+                                style="width: 110px;">
+                            <div class="content ms-2">
+                                <a href="#!postDetail/{{ post.id  }}" class="fz-14 fw-bold  text-hover ">{{ post.title }}</a> <br>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <hr class="mt-2 mb-2">
+                
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="bg-light ">
+            <div class="row ms-3  pt-3">
+                <nav aria-label="breadcrumb ">
+                    <ol class="breadcrumb container">
+                        <li class="breadcrumb-item"><a href="index.html">Trang Chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Đăng Ký</li>
+                    </ol>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+    <div class="container mb-5  ">
+        <div class="col-md-4 offset-md-4 rounded-3 p-2 ">
+            <h1 class="text-success fs-2 text-center mb-4">Đăng Ký</h1>
+            <p class="text-center fz-14">Hãy ghi nhớ thông tin để có thể đăng nhập</p>
+            <div class="alert alert-danger" ng-show="isError">Dã Xảy ra lỗi VUi lòng thử lại!</div>
+
+            <form ng-submit="singup()" name="formsignup">
+                <div class="mb-3">
+                    <label class="form-label">Họ Và Tên</label>
+                    <input type="text" class="form-control pt-2 pb-2"
+                        placeholder="Họ Tên Của Bạn" ng-model="name" name="name" required>
+                    <div class="alert alert-danger" ng-show="formsignup.name.$error.required && formsignup.name.$dirty">Vui lòng nhập tên!</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control pt-2 pb-2"
+                        placeholder="Email Của bạn" name="email" ng-model="email" required>
+                    <div class="alert alert-danger" ng-show="formsignup.email.$error.email && formsignup.email.$dirty">Email không đúng định dạng!</div>
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Password</label>
+                    <input type="password" class="form-control pt-2 pb-2" 
+                        placeholder="Password" ng-model="password" name="password" required minlength="7">
+                    <div class="alert alert-danger" ng-show="formsignup.password.$error.minlength && formsignup.password.$dirty">Mật khẩu phải có ít nhất 7 ký tự!</div>
+                </div>
+                <div class="mb-3 mt-5">
+                    <button type="submit"
+                        class="form-control pt-2 pb-2 btn-outline-success text-center fw-medium text-bg-success text-white btn-success mt-3"
+                        >Đăng Ký</button>
+                </div>
+                <div class="mb-3 d-flex fz-14 justify-content-end">
+                    <p> Đã có tài khoản.</p>
+                    <a href="#" class=" text-hover">Đăng Nhập?</a>
+                </div>
+            </form>
+            
+        </div>
+    </div>

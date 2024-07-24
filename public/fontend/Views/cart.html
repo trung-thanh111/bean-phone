@@ -1,0 +1,101 @@
+
+        <div class="bg-light  ">
+            <div class="row ms-3  pt-3">
+                <nav aria-label="breadcrumb ">
+                    <ol class="breadcrumb container">
+                        <li class="breadcrumb-item"><a href="index.html">Trang Chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Giỏ Hàng</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container  mb-5  ">
+
+        <h1 style="font-size: 16px; font-weight: bold;" class="mb-3 mt-3 rounded-2 bg-light pt-3 pb-3 ps-3">
+            GIỎ HÀNG</h1>
+        <div class="row">
+
+            <div class="col-9">
+                <p class="text-bg-success w-100 rounded text-center p-1 fw-medium">Đơn hàng được miễn phí vận chuyển</p>
+                <table class="table bordered w-100">
+                    <thead>
+                        <tr>
+                            <th class="w-10">Thông Tin Sản Phẩm</th>
+                            <th class="w-10"></th>
+                            <th class="w-10"></th>
+                            <th class="text-center w-20">Đơn Giá</th>
+                            <th class="text-center w-10">Số Lượng</th>
+                            <th class="text-center w-20">Thành Tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="sp in cart" class="align-middle">
+                            <td class="w-10 d-flex">
+                                <img src="Public/img/{{ sp.img }}" style="width: 100px;" alt="">
+                                <div class="fz-14 mt-3">
+                                    <span class="fw-bold mb-2">{{ sp.name }}</span> <br>
+                                    <span class="fz-12">Màu: <strong>{{ sp.color }}</strong></span> <br>
+                                    <a type="submit" class="fz-12 btn btn-outline-danger border-0 p-1 mt-3" style="width: 50px;" ng-click="delete($index)">Xóa</a>
+                                </div>
+                            </td>
+                            <td class="w-10"></td>
+                            <td class="w-10"></td>
+                            <td class="text-center w-20"><span class="text-danger fw-bold">{{ sp.price | currency:"":0 }} VNĐ</span></td>
+                            <td class="text-center w-10"><input type="number" style="width:40px; border:none;" ng-model="sp.quantity" ng-change="saveCart()" min="0"></td>
+                            <td class="text-center w-20">{{ sp.price*sp.quantity | currency:"":0}} VNĐ</td>
+                        </tr>
+                        
+                    </tbody>
+                    <tfoot >
+                        <tr ng-if="cart.length > 0">
+                            <td colspan="6" class="text-end"><a type="submit" ng-click="clearAll()" class="btn btn-danger">Xóa Hết</a></td>
+                        </tr>
+                        <tr ng-if="cart.length === 0">
+                            <td colspan="6" class="text-center p-3 text-info"> <h2>Chưa có sản phẩm</h2>
+                            </td>
+                        </tr>
+                    </tfoot>
+                    
+                </table>
+
+
+            </div>
+            <div class="col-3 ">
+                <h1 style="font-size: 16px; font-weight: bold;" class=" rounded-2 bg-light  pb-3 ps-3">
+                    Đơn Mua</h1>
+                <div class="position-relative d-flex mt-3" ng-repeat="sp in cart" ng-if="cart.length > 0">
+                    <img src="Public/img/{{ sp.img }}" class="" style="width: 40px;" alt="">
+                    <div>
+                        <span class=" ms-2" style="height: 40px; font-size: 12px;">{{ sp.name }}</span>
+                        <p class="position-absolute top-0 start-100 translate-middle text-danger fz-14">X{{ sp.quantity }}</p>
+                    </div>
+                </div>
+                <div ng-if="cart.length == 0">
+                    <span class="text-center text-info">Chưa có sản phẩm</span>
+                </div>
+                <hr>
+                <div class="row g-3">
+                    <label for="" class="form-label">Nhập Coupon</label>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control" placeholder="" aria-label="City">
+                    </div>
+                    <div class="col-md">
+                      <input type="button" class=" btn btn-info form-control text-white" value="Áp Dụng">
+                    </div>
+                    
+                  </div>
+                <hr>
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="fs-6 ">Phí vận chuyển: </span>
+                    <strong class="">0 VNĐ</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-5">
+                    <span class="fs-6 ">Tạm Tính: </span>
+                    <strong class="">{{ tinhTong() | currency:"":0 }} VNĐ</strong>
+                </div>
+                <a href="#!checkout" class="btn btn-info text-white w-100">Tiến Hành Thanh Toán</a>
+            </div>
+        </div>
+
+    </div>

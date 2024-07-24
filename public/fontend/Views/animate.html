@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Slider with Mascot</title>
+    <style>
+        /* styles.css */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .slider {
+            position: fixed;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 100%;
+            background: purple;
+            z-index: 1000;
+        }
+
+        .mascot {
+            width: 30px;
+            height: 30px;
+            background: url('path_to_mascot_image.png') no-repeat center center;
+            background-size: contain;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section {
+            height: 100vh;
+            text-align: center;
+            font-size: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #section1 {
+            background: lightcoral;
+        }
+
+        #section2 {
+            background: lightblue;
+        }
+
+        #section3 {
+            background: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="mascot"></div>
+    </div>
+
+    <section id="section1" class="section">Section 1</section>
+    <section id="section2" class="section">Section 2</section>
+    <section id="section3" class="section">Section 3</section>
+
+    <script>
+        // script.js
+        document.addEventListener('scroll', function () {
+            const sections = document.querySelectorAll('.section');
+            const mascot = document.querySelector('.mascot');
+            const windowHeight = window.innerHeight;
+
+            let currentSection = sections[0];
+
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const sectionBottom = section.getBoundingClientRect().bottom;
+
+                if (sectionTop <= windowHeight / 2 && sectionBottom >= windowHeight / 2) {
+                    currentSection = section;
+                }
+            });
+
+            const currentSectionTop = currentSection.getBoundingClientRect().top + window.scrollY;
+            mascot.style.top = `${currentSectionTop + (currentSection.offsetHeight / 2) - (mascot.offsetHeight / 2)}px`;
+        });
+
+    </script>
+</body>
+
+</html>

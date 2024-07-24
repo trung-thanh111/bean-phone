@@ -1,0 +1,86 @@
+
+        <div class="bg-light ">
+            <div class="row ms-3  pt-3">
+                <nav aria-label="breadcrumb ">
+                    <ol class="breadcrumb container">
+                        <li class="breadcrumb-item"><a href="index.html">Trang Chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Đơn Hàng</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-5  ">
+        <div class="row">
+            <div class="col-3 ">
+                <div class="d-flex">
+                    <img src="Public/img/{{ user.img }}" class="rounded-circle border" style="width: 60px; height: 60px;" alt="">
+                    <div class="align-middle ">
+
+                        <h4 class="ms-3">{{ user.name }}</h4>
+                        <span class="ms-3 fz-14"> Trải Nghiệm Ngay!</span>
+                    </div>
+                </div>
+                <ul class="list-unstyled mt-5 fz-14 fw-bold ">
+                    <li class="mb-4">
+                        <a href="#!info/{{ user.id }}" class="text-hover ">Thông Tin Tài khoản</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#!orders/{{ user.id }}" class="text-hover ">Đơn Hàng</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#!changepass/{{ user.id }}" class="text-hover ">Đổi Mật Khẩu</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#!whistlist" class="text-hover ">Yêu Thích</a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="#!address/{{ user.id }}" class="text-hover ">Địa Chỉ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-9">
+                <h5 class="mt-1 mb-5">ĐƠN HÀNG CỦA BẠN</h5>
+                <div class="col-12">
+                    <table class="table bordered w-100">
+                        <thead>
+                            <tr class="align-middle">
+                                <th class="w-10">Thông Tin </th>
+                                <th class="w-10"></th>
+                                <th class="w-10"></th>
+                                <th class="text-center w-20">Số lượng Sản Phẩm</th>
+                                <th class="text-center w-20">Giá Trị</th>
+                                <th class="text-center w-10">Ngày Đặt</th>
+                                <th class="text-center w-20">Trang Thái</th>
+                            </tr>
+                            <tr>
+                                <th class="mb-3" style="background-color: #f6f6f6;">  </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr class="align-middle" ng-repeat="sp in listOrders">
+                                <td class="w-10 d-flex ">
+                                    <div class="fz-14 mt-3">
+                                        <span class="fw-bold mb-2">{{ sp.name }}</span> <br>
+                                        <span class="fz-12">Mã: <strong>#{{ sp.id }}</strong></span> <br>
+                                    </div>
+                                </td>
+                                <td class="w-10"></td>
+                                <td class="w-10"></td>
+                                <td class="text-center w-20"><span class="text fw-bold">{{ sp.product.length }}</span></td>
+                                <td class="text-center w-20"><span class="text-danger fw-bold">{{ sp.total | currency:"":0 }} VNĐ</span></td>
+                                <td class="text-center w-10">{{ sp.date }}</td>
+                                <td class="text-center w-20 text-success">{{ sp.status }}</td>
+                            </tr>
+                            <tr>
+                                <td class="mb-3" style="background-color: #f6f6f6;"></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

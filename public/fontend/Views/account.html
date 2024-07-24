@@ -1,0 +1,71 @@
+
+        <div class="bg-light ">
+            <div class="row ms-3  pt-3">
+                <nav aria-label="breadcrumb ">
+                    <ol class="breadcrumb container">
+                        <li class="breadcrumb-item"><a href="index.html">Trang Chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Thông Tin Khách Hàng</li>
+                    </ol>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+    <div class="container mb-5  ">
+        <div class="row">
+            <div class="col-3 ">
+                <div class="d-flex">
+                    <img src="Public/img/{{ user.img }}" class="rounded-circle border" style="width: 60px; height: 60px;" alt="">
+                    <div class="align-middle ">
+
+                        <h4 class="ms-3">{{ user.name }}</h4>
+                        <span class="ms-3 fz-14"> Trải Nghiệm Ngay!</span>
+                    </div>
+                </div>
+                <ul class="list-unstyled mt-5 fz-14 fw-bold ">
+                    <li class="mb-4">
+                        <a href="#!info/{{ user.id }}" class="text-hover ">Thông Tin Tài khoản</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#!orders/{{ user.id }}" class="text-hover ">Đơn Hàng</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#!changepass/{{ user.id }}" class="text-hover ">Đổi Mật Khẩu</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#!whistlist" class="text-hover ">Yêu Thích</a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="#!address/{{ user.id }}" class="text-hover ">Địa Chỉ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-9">
+                <h5 class="mt-1">THÔNG TIN TÀI KHOẢN</h5>
+                <form class="row g-3 mt-5 position-relative">
+                <span class="position-absolute top-0 start-50 mb-2 text-end translate-middle"><a href="#!editinfo/{{ user.id }}"><i class="fa-solid fa-pen-to-square fs-3 scale-hover "></i></a></span>
+
+                    <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label" >Họ Và Tên</label>
+                        <input type="text" class="form-control" value="{{ user.name }}" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label" >Email</label>
+                        <input type="email" class="form-control" value="{{ user.email }}" readonly>
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label" >Địa Chỉ</label>
+                        <input type="text" class="form-control" id="inputAddress" value="{{ user.address }}" placeholder="1234 Main St" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputCity" class="form-label" >Số Điện Thoại</label>
+                        <input type="text" class="form-control" id="inputCity" value="{{ user.phone }}" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputZip" class="form-label" >Zip</label>
+                        <input type="text" class="form-control" id="inputZip" value="{{ user.zipcode }}" readonly>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
